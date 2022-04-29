@@ -17,7 +17,7 @@
 render_lectures <- function(lecture){
   
   # Setting the directory
-  dir <-"./R"
+  dir <-"./inst/doc"
   
   # Setting the lecture names
   lectures <- paste0("Lecture", 1:6)
@@ -62,7 +62,7 @@ render_lectures <- function(lecture){
 render_exercises <- function(exercise, solved = FALSE){
   
   # Setting the directory
-  dir <-"./Rexercises"
+  dir <-"./inst/doc"
   
   # Setting the lecture names
   exercises <- paste0("Exercise", 1:3)

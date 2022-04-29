@@ -6,8 +6,9 @@ Author: Oscar M. Baez-Villanueva
 Maintainer: Oscar M. Baez-Villanueva <obaezvil@gmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports: 
+    utils
 RoxygenNote: 7.1.2

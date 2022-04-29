@@ -17,7 +17,8 @@
 render_lectures <- function(lecture){
   
   # Setting the directory
-  dir <-"./doc"
+  dir <- here::here()
+  dir <- file.path(dir, "doc")
   
   # Setting the lecture names
   lectures <- paste0("Lecture", 1:6)
@@ -62,7 +63,8 @@ render_lectures <- function(lecture){
 render_exercises <- function(exercise, solved = FALSE){
   
   # Setting the directory
-  dir <-"./doc"
+  dir <- here::here()
+  dir <- file.path(dir, "doc")
   
   # Setting the lecture names
   exercises <- paste0("Exercise", 1:3)

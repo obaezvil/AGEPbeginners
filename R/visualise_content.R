@@ -17,10 +17,8 @@
 render_lectures <- function(lecture){
   
   # Setting the directory
-  dir <- here::here("doc")
-  
-  #print path
-  message(dir)
+  dir <- .get_libpath("AGEPbeginners")
+  dir <- file.path(dir, "doc")
   
   # Setting the lecture names
   lectures <- paste0("Lecture", 1:6)
@@ -65,7 +63,8 @@ render_lectures <- function(lecture){
 render_exercises <- function(exercise, solved = FALSE){
   
   # Setting the directory
-  dir <- here::here("doc")
+  dir <- .get_libpath("AGEPbeginners")
+  dir <- file.path(dir, "doc")
   
   # Setting the lecture names
   exercises <- paste0("Practical_exercise", 1:3)
@@ -89,3 +88,31 @@ render_exercises <- function(exercise, solved = FALSE){
   } 
   
 } # end render_exercises
+
+
+# utils function that finds library of the packages
+.get_libpath <- function(package){
+  
+  # Get library paths
+  paths <- .libPaths()
+  
+  # iterative process to find package
+  pos <- NA
+  for(i in 1:length(paths)){
+    
+    pos[i] <- file.exists(file.path(paths[i], package))
+    
+  }
+  
+  # Checking libpaths that include the package
+  final_path <- paths[which(pos == "TRUE")]
+  
+  # Checking that the package is there
+  if(length(final_path) < 1)
+    stop("The package ", package, " could not be found!")
+  
+  # retrieving library path
+  final_path <- file.path(final_path[1], package)
+  return(final_path)
+  
+}

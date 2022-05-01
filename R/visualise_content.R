@@ -20,7 +20,7 @@ render_lectures <- function(lecture){
   dir <- here::here("doc")
   
   #print path
-  cat(dir)
+  message(dir)
   
   # Setting the lecture names
   lectures <- paste0("Lecture", 1:6)

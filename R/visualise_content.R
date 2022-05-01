@@ -19,6 +19,9 @@ render_lectures <- function(lecture){
   # Setting the directory
   dir <- here::here("doc")
   
+  #print path
+  cat(dir)
+  
   # Setting the lecture names
   lectures <- paste0("Lecture", 1:6)
   

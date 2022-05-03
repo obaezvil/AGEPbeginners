@@ -14,10 +14,21 @@
 
 - 6.  Automating downloading
 
-### Installation
+### Installation and usage
 
-Install development version from GitHub :
-
+Make sure that devtools are installed:
+```r
+install.packages("devtools")
+```
+Install the AGEPbeginners package from GitHub :
 ```r
 remotes::install_github("obaezvil/AGEPbeginners")
+```
+Load the package:
+```r
+library(AGEPbeginners)
+```
+Open the first lecture:
+```r
+render_lectures("Lecture1") 
 ```

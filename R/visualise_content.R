@@ -79,7 +79,7 @@ render_exercises <- function(exercise, solved = FALSE){
     stop("The parameter 'solved' must be either TRUE or FALSE")
   
   # Extracting number
-  nbr <- substr(exercise, 9, 9)
+  nbr <- substr(exercise, 19, 19)
   
   if(solved){
     browseURL(file.path(dir, paste0("Practical_exercise", nbr, "_solved.html")))

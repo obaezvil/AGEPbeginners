@@ -53,7 +53,7 @@ render_lectures <- function(lecture){
 #' Deploy the exercises in HTML format
 #'
 #' @param exercise character object indicating which exercise to visualise:
-#'   'Exercise1', 'Exercise2', or 'Exercise3'
+#'   'Practical_exercise1', 'Practical_exercise2', or 'Practical_exercise3'
 #' @param solved logical argument. Should the solution be displayed? The default is FALSE
 #'
 #' @return this function directs the user to the selected exercise.
@@ -72,7 +72,7 @@ render_exercises <- function(exercise, solved = FALSE){
   # Checking if the name corresponds to the existing lectures
   if(!exercise %in% exercises)
     stop("Please provide the proper name of the exercise:
-          'Exercise1', 'Exercise2', or 'Exercise3'")
+          'Practical_exercise1', 'Practical_exercise2', or 'Practical_exercise3'")
   
   # Checking if the parameter solved is logical
   if(!is.logical(solved))
@@ -82,9 +82,9 @@ render_exercises <- function(exercise, solved = FALSE){
   nbr <- substr(exercise, 9, 9)
   
   if(solved){
-    browseURL(file.path(dir, paste0("Exercise", nbr, "_solved.html")))
+    browseURL(file.path(dir, paste0("Practical_exercise", nbr, "_solved.html")))
   } else {
-    browseURL(file.path(dir, paste0("Exercise", nbr, ".html")))
+    browseURL(file.path(dir, paste0("Practical_exercise", nbr, ".html")))
   } 
   
 } # end render_exercises
